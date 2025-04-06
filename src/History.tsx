@@ -25,8 +25,8 @@ function History() {
 				|> filter(fn: (r) => r._measurement == "TempAndHum")
 				|> filter(fn: (r) => r._field == "SHT40-temp" or r._field == "SHT40-hum")
 				|> pivot(rowKey:["_time"], columnKey:["_field"], valueColumn: "_value")
-				|> limit(n: 100)
 				|> sort(columns: ["_time"], desc: true) // Optional: sort by time
+				|> limit(n: 100)
 			`;
 
 			const response = await fetch(`${URL}/api/v2/query?org=${ORG_ID}`, {
