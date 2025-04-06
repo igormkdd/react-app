@@ -97,9 +97,9 @@ function History() {
 				<Table>
 					<TableBody>
 						<TableRow key={Math.random()}>
-							<TableCell>Timestamp</TableCell>
-							<TableCell>Temperature</TableCell>
-							<TableCell>Humidity</TableCell>
+							<TableCell><strong>Timestamp</strong></TableCell>
+							<TableCell><strong>Temperature</strong></TableCell>
+							<TableCell><strong>Humidity</strong></TableCell>
 						</TableRow>
 						{
 							data.map(record => (
