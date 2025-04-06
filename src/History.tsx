@@ -51,7 +51,7 @@ function History() {
 			for (const row of dataRows) {
 				const cols = row.split(',');
 
-				const timestamp = cols[5];
+				const timestamp = cols[3];
 				const formattedTimestamp = formatTimestamp(timestamp);
 				const temperature = cols[10];
 				const humidity = cols[9];
