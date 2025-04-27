@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import './App.css';
-import { formatTimestamp } from './helpers/utils';
-import { Navbar } from './components/Navbar';
-import { HeaderLogo } from './components/HeaderLogo';
+import '../styles/App.css';
+import { formatTimestamp } from '../helpers/utils';
+import { Navbar } from '../components/Navbar';
+import { HeaderLogo } from '../components/HeaderLogo';
 import { Table, TableBody, TableCell, TableRow } from 'carbon-components-react';
-import { SensorData } from './types/SensorData';
+import { SensorData } from '../types/SensorData';
 
 // env variables
 const URL = import.meta.env.VITE_INFLUXDB_URL;

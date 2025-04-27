@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import { Content, Loading, Tile, Grid, Row, Column } from 'carbon-components-react';
-import './App.css';
-import { formatTimestamp } from './helpers/utils';
-import { SensorData } from './types/SensorData';
-import { Navbar } from './components/Navbar';
-import { HeaderLogo } from './components/HeaderLogo';
+import '../styles/App.css';
+import { formatTimestamp } from '../helpers/utils';
+import { SensorData } from '../types/SensorData';
+import { Navbar } from '../components/Navbar';
+import { HeaderLogo } from '../components/HeaderLogo';
 
 // env variables
 const URL = import.meta.env.VITE_INFLUXDB_URL;
 const TOKEN = import.meta.env.VITE_INFLUXDB_TOKEN;
 const ORG_ID = import.meta.env.VITE_INFLUXDB_ORG_ID;
 
-function App() {
+export default function App() {
 	const [data, setData] = useState<SensorData | null>(null);
 	const [error, setError] = useState<string | null>(null);
 	const [loading, setLoading] = useState(true);
@@ -127,5 +127,3 @@ function App() {
 		</div>
 	);
 }
-
-export default App;
