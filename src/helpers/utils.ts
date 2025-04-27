@@ -1,6 +1,7 @@
 export function formatTimestamp(timestamp: string, timeZone = 'Europe/Skopje') {
+  if (timestamp) {
     const date = new Date(timestamp);
-  
+
     return new Intl.DateTimeFormat('en-GB', {
       timeZone,
       year: 'numeric',
@@ -11,4 +12,4 @@ export function formatTimestamp(timestamp: string, timeZone = 'Europe/Skopje') {
       second: '2-digit'
     }).format(date);
   }
-  
+}

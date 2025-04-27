@@ -3,6 +3,7 @@ import { login } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
 import '../styles/App.css';
 import { HeaderLogo } from "../components/HeaderLogo";
+import { Footer } from "../components/Footer";
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -33,6 +34,8 @@ export default function Login() {
 
             <br /><br />
             <p>New to the platform. Register <Link to="/register">here.</Link></p>
+
+            <Footer />
         </div>
     );
 }

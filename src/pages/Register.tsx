@@ -3,6 +3,7 @@ import { register } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
 import '../styles/App.css';
 import { HeaderLogo } from "../components/HeaderLogo";
+import { Footer } from "../components/Footer";
 
 export default function Register() {
     const [name, setName] = useState("");
@@ -35,6 +36,8 @@ export default function Register() {
 
             <br /><br />
             <p>Already have an account. Login <Link to="/login">here.</Link></p>
+
+            <Footer />
         </div>
     );
 }
