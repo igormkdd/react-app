@@ -14,9 +14,11 @@ export default function App() {
 	const data = rawData[0];
 
 	const token = localStorage.getItem("token");
-	console.log("TOKEN: " + token);
 
 	useEffect(() => {
+		if (!token) {
+			window.location.href = '/';
+		}
 		fetchSensors().then(setSensors);
 	}, []);
 

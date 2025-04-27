@@ -22,9 +22,10 @@ function History() {
 
 	useEffect(() => {
 		const token = localStorage.getItem("token");
-		if (token) {
-			fetchSensors().then(setSensors);
+		if (!token) {
+			window.location.href = '/';
 		}
+		fetchSensors().then(setSensors);
 	}, []);
 
 	return (
