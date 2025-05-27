@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import '../styles/App.css';
 import { HeaderLogo } from "../components/HeaderLogo";
 import { Footer } from "../components/Footer";
+import { RoutePaths } from "../routes/paths";
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -15,7 +16,7 @@ export default function Login() {
         const result = await login(email, password);
         if (result.token) {
             localStorage.setItem("token", result.token);
-            navigate("/app");
+            navigate(RoutePaths.APP);
         } else {
             alert(result.error || "Login failed");
         }
@@ -33,7 +34,7 @@ export default function Login() {
             </form>
 
             <br /><br />
-            <p>New to the platform. Register <Link to="/register">here.</Link></p>
+            <p>New to the platform. Register <Link to={RoutePaths.REGISTER}>here.</Link></p>
 
             <Footer />
         </div>

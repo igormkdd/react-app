@@ -7,6 +7,7 @@ import { Navbar } from '../components/Navbar';
 import { HeaderLogo } from '../components/HeaderLogo';
 import { Footer } from '../components/Footer';
 import { fetchSensors } from '../api/sensors';
+import { RoutePaths } from '../routes/paths';
 
 export default function App() {
 
@@ -16,7 +17,7 @@ export default function App() {
 	useEffect(() => {
 		const token = localStorage.getItem("token");
 		if (!token) {
-			window.location.href = '/login';
+			window.location.href = RoutePaths.LOGIN;
 		}
 		fetchSensors().then(setSensors);
 	}, []);

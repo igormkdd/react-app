@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import '../styles/App.css';
 import { HeaderLogo } from "../components/HeaderLogo";
 import { Footer } from "../components/Footer";
+import { RoutePaths } from "../routes/paths";
 
 export default function Register() {
     const [name, setName] = useState("");
@@ -16,7 +17,7 @@ export default function Register() {
         const result = await register(email, password);
         if (result.message) {
             alert("User created. Please login.");
-            navigate("/login");
+            navigate(RoutePaths.LOGIN);
         } else {
             alert(result.error || "Registration failed");
         }
@@ -35,7 +36,7 @@ export default function Register() {
             </form>
 
             <br /><br />
-            <p>Already have an account. Login <Link to="/login">here.</Link></p>
+            <p>Already have an account. Login <Link to={RoutePaths.LOGIN}>here.</Link></p>
 
             <Footer />
         </div>
