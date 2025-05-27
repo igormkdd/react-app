@@ -5,13 +5,10 @@ export async function fetchSensors() {
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            // 'Authorization': `Bearer ${token}`,
-            // 'Access-Control-Allow-Origin': '*',
-            // 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-            // 'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+            'Authorization': `Bearer ${localStorage.getItem("token")}`
         },
         credentials: 'include',
-        mode: 'cors' 
+        mode: 'cors'
     });
 
     const data = await res.json();

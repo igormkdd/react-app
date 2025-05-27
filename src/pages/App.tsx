@@ -13,11 +13,10 @@ export default function App() {
 	const [rawData, setSensors] = useState<Array<SensorData>>([]);
 	const data = rawData[0];
 
-	const token = localStorage.getItem("token");
-
 	useEffect(() => {
+		const token = localStorage.getItem("token");
 		if (!token) {
-			window.location.href = '/';
+			window.location.href = '/login';
 		}
 		fetchSensors().then(setSensors);
 	}, []);

@@ -6,12 +6,14 @@ import History from './pages/History.tsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Register from './pages/Register.tsx'
 import Login from './pages/Login.tsx'
+import Home from './pages/Home.tsx'
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Login />} />
+				<Route path="/" element={<Home />} />
+				<Route path="/home" element={<Home />} />
 				<Route path="/login" element={<Login />} />
 				<Route path="/register" element={<Register />} />
 				<Route path="/app" element={<App />} />
