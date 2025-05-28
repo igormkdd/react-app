@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Content, Tile, Grid, Row, Column } from 'carbon-components-react';
+import { Content, Tile, Grid, Row, Column, ToastNotification } from 'carbon-components-react';
 import '../styles/App.css';
 import { formatTimestamp } from '../helpers/utils';
 import { SensorData } from '../types/SensorData';
@@ -12,9 +12,15 @@ export default function App() {
 
 	const [rawData, setSensors] = useState<Array<SensorData>>([]);
 	const data = rawData[0];
+	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
-		fetchSensors().then(setSensors);
+		fetchSensors()
+			.then(setSensors)
+			.catch((err) => {
+				console.error('Error: ', err.message);
+				setError(err.message);
+			});;
 	}, []);
 
 	// useEffect(() => {
@@ -25,6 +31,19 @@ export default function App() {
 
 	return (
 		<div data-carbon-theme="g100">
+
+			{error && (
+				<ToastNotification
+					kind="error"
+					title="Backend Error"
+					subtitle={error}
+					caption=""
+					onCloseButtonClick={() => setError(null)}
+					lowContrast={true}
+					timeout={0}
+				/>
+			)}
+
 			<HeaderLogo />
 
 			<Navbar />
