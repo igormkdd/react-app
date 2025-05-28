@@ -44,6 +44,14 @@ export const routes: RouteObject[] = [
         ),
     },
     {
+        path: RoutePaths.ROOT,
+        element: (
+            <ProtectedRoute>
+                <HomePage />
+            </ProtectedRoute>
+        ),
+    },
+    {
         path: '*',
         element: <NotFoundPage />,
     },
