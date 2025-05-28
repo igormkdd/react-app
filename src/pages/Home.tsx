@@ -4,15 +4,10 @@ import '../styles/App.css';
 import { Navbar } from '../components/Navbar';
 import { HeaderLogo } from '../components/HeaderLogo';
 import { Footer } from '../components/Footer';
-import { RoutePaths } from '../routes/paths';
 
 export default function Home() {
 
 	useEffect(() => {
-		const token = localStorage.getItem("token");
-		if (!token) {
-			window.location.href = RoutePaths.LOGIN;
-		}
 	}, []);
 
 	// useEffect(() => {

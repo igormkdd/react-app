@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { RoutePaths } from '../routes/paths';
 
 const logout = () => {
-  localStorage.removeItem('token'); 
+  localStorage.removeItem('token');
   window.location.href = RoutePaths.LOGIN;
 };
 

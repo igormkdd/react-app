@@ -7,7 +7,6 @@ import { SensorData } from '../types/SensorData';
 import { Footer } from '../components/Footer';
 import { fetchSensors } from '../api/sensors';
 import { formatTimestamp } from '../helpers/utils';
-import { RoutePaths } from '../routes/paths';
 
 function History() {
 	const [data, setSensors] = useState<Array<SensorData>>([]);
@@ -22,10 +21,6 @@ function History() {
 	// }, []);
 
 	useEffect(() => {
-		const token = localStorage.getItem("token");
-		if (!token) {
-			window.location.href = RoutePaths.LOGIN;
-		}
 		fetchSensors().then(setSensors);
 	}, []);
 
